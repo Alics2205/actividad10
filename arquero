@@ -1,0 +1,45 @@
+package ejercicio11;
+
+public class arquero extends futbolista {
+	private int atajadas;
+
+	private int golesRecibidos;
+
+	public arquero(String nombre, String apellido, int edad, int dorsal, String club, int atajadas,
+			int golesRecibidos) {
+
+		super(nombre, apellido, edad, dorsal, club);
+
+		this.atajadas = atajadas;
+		this.golesRecibidos = golesRecibidos;
+	}
+
+	@Override
+	public String getPuesto() {
+		return "Arquero";
+	}
+
+	@Override
+	public String jugarLaPelota() {
+		return "El arquero juega con las manos y los pies";
+	}
+
+	@Override
+
+	public double calcularRendimiento() {
+
+		double rendimiento = (atajadas - golesRecibidos * 0.5);
+
+		if (rendimiento < 0) {
+			rendimiento = 0;
+		}
+
+		if (rendimiento > 10) {
+			rendimiento = 10;
+		}
+
+		return rendimiento;
+
+	}
+
+}
