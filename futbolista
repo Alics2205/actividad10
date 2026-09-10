@@ -1,14 +1,14 @@
 package ejercicio11;
 
-public abstract class futbolista extends persona {
+public abstract class Futbolista extends Persona {
 
 	private int dorsal;
 	private String club;
 
-	public futbolista(String nombre,String apellido, int edad,int dorsal, String club) {
+	public Futbolista(String nombre, String apellido, int edad, int dorsal, String club) {
 		super(nombre, apellido, edad);
 		this.dorsal = dorsal;
-		this.club = club;	
+		this.club = club;
 	}
 
 	public int getDorsal() {
@@ -26,15 +26,18 @@ public abstract class futbolista extends persona {
 	public void setClub(String club) {
 		this.club = club;
 	}
-	
-	  public abstract void getPuesto ();
-	  
-	  public abstract void jugarLaPelota ();
 
-	  public abstract double calcularRendimiento ();
+	public abstract String getPuesto();
 
-	  public static void presentarse() {
+	public abstract String jugarLaPelota();
+
+	public abstract double calcularRendimiento();
+
+	public String  resumenPartido() {
+		return "Puesto: " + getPuesto() 
+		+ "\nAcción: " + jugarLaPelota() 
+		+ "\nRendimiento: " + calcularRendimiento();
+
 	}
 
-	  
 }
