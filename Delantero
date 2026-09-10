@@ -1,0 +1,42 @@
+package ejercicio11;
+
+public class Delantero extends Futbolista {
+
+	int goles;
+	int remates;
+
+	public Delantero(String nombre, String apellido, int edad, int dorsal, String club) {
+		super(nombre, apellido, edad, dorsal, club);
+		this.goles = goles;
+		this.remates = remates;
+
+	}
+
+	@Override
+	public String getPuesto() {
+		return "Delantero";
+	}
+
+	@Override
+	public String jugarLaPelota() {
+		return "marca gol";
+
+	}
+
+	@Override
+	public double calcularRendimiento() {
+
+		double rendimiento;
+
+		if (remates == 0) {
+			rendimiento = 0;
+		} else {
+			rendimiento = (double) goles / remates;
+		}
+
+		if (rendimiento > 10) {
+			rendimiento = 10;
+		}
+		    return rendimiento;
+	}
+}
