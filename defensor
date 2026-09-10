@@ -1,13 +1,12 @@
 package ejercicio11;
 
-public class defensor extends futbolista {
+public class Defensor extends Futbolista {
 
 	int quites;
 	int despejes;
 	
 
-	public defensor(String nombre, String apellido, int edad, int dorsal, String club, int atajadas,
-			int golesRecibidos) {
+	public Defensor(String nombre, String apellido, int edad , int dorsal, String club, int quites, int despejes) {
 
 		super(nombre, apellido, edad, dorsal, club);
 
@@ -19,7 +18,7 @@ public class defensor extends futbolista {
 	public String getPuesto() {
 		return "defensor";
 	}
-//y
+
 	@Override
 	public  String jugarLaPelota() {
 		return "cambiar";
@@ -27,8 +26,7 @@ public class defensor extends futbolista {
 
 	
 	@Override
-	//errro
-	double calcularRendimiento() {
+	public double calcularRendimiento() {
 
 		double rendimiento = (quites - despejes * 0.5);
 
