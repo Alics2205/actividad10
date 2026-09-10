@@ -1,11 +1,11 @@
 package ejercicio11;
 
-public class arquero extends futbolista {
+public class Arquero extends Futbolista {
 	private int atajadas;
 
 	private int golesRecibidos;
 
-	public arquero(String nombre, String apellido, int edad, int dorsal, String club, int atajadas,
+	public Arquero(String nombre, String apellido, int edad, int dorsal, String club, int atajadas,
 			int golesRecibidos) {
 
 		super(nombre, apellido, edad, dorsal, club);
@@ -20,7 +20,7 @@ public class arquero extends futbolista {
 	}
 
 	@Override
-	public String jugarLaPelota() {
+	public  String jugarLaPelota() {
 		return "El arquero juega con las manos y los pies";
 	}
 
@@ -41,5 +41,6 @@ public class arquero extends futbolista {
 		return rendimiento;
 
 	}
+	
 
 }
