@@ -1,0 +1,26 @@
+package ejercicio11;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Futbolista n1 = new Arquero("Juan", "Perez", 24, 14, "river", 9, 5);
+		Futbolista n2 = new Arquero("Ricardo", "Gonzales", 27, 23, "boca", 5, 6);
+
+		System.out.println(n1.resumenPartido());
+		System.out.println(n2.resumenPartido());
+		System.out.println();
+
+        List<Futbolista> Futbolistas = new ArrayList<>();
+        Futbolistas.add(new Arquero("Federico", "Martinez", 32, 10, "Racing ", 2, 7));
+
+        for (Futbolista l : Futbolistas) {
+ 
+        }
+        
+	}
+
+}
