@@ -7,20 +7,68 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Futbolista n1 = new Arquero("Juan", "Perez", 24, 14, "river", 9, 5);
-		Futbolista n2 = new Arquero("Ricardo", "Gonzales", 27, 23, "boca", 5, 6);
+		List<Futbolista> Futbolistas = new ArrayList<>();
 
-		System.out.println(n1.resumenPartido());
-		System.out.println(n2.resumenPartido());
+
+		Futbolistas.add(new Arquero("Federico", "Martinez", 32, 10, "Racing ", 2, 7));
+		Futbolistas.add(new Arquero("marcos", "fernandez", 29, 9, "independiente ", 8, 2));
+
+		Futbolistas.add(new Defensor("Federico", "Martinez", 32, 10, "Racing ", 2, 7));
+		Futbolistas.add(new Defensor("Federico", "Martinez", 32, 10, "Racing ", 2, 7));
+
+		Futbolistas.add(new Delantero("Matias", "Lopez", 22, 9, "River", 6, 10));
+
+		System.out.println(" RESUMEN DE LOS JUGADORES");
+		// recorre tds los futbolistas
+
+		for (Futbolista futbolista : Futbolistas) {
+
+			System.out.println();
+
+		}
+
+		// busca al mejor futbolista(mejor rendimiento)
+		Futbolista mejorJugador = Futbolistas.get(0);
+
+		for (Futbolista futbolista : Futbolistas) {
+
+			if (futbolista.calcularRendimiento() > mejorJugador.calcularRendimiento()) {
+				mejorJugador = futbolista;
+			}
+		}
+
+		System.out.println(mejorJugador.resumenPartido());
+		int cantidadArqueros = 0;
+		int cantidadDefensores = 0;
+		int cantidadMediocampistas = 0;
+		int cantidadDelanteros = 0;
+
+		for (Futbolista futbolista : Futbolistas) {
+
+			if (futbolista instanceof Arquero) {
+				cantidadArqueros++;
+			}
+
+			if (futbolista instanceof Defensor) {
+				cantidadDefensores++;
+			}
+
+			if (futbolista instanceof Mediocampista) {
+				cantidadMediocampistas++;
+			}
+
+			if (futbolista instanceof Delantero) {
+				cantidadDelanteros++;
+			}
+		}
+
 		System.out.println();
+		System.out.println(" CANTIDAD POR PUESTO ");
+		System.out.println("Arqueros: " + cantidadArqueros);
+		System.out.println("Defensores: " + cantidadDefensores);
+		System.out.println("Mediocampistas: " + cantidadMediocampistas);
+		System.out.println("Delanteros: " + cantidadDelanteros);
 
-        List<Futbolista> Futbolistas = new ArrayList<>();
-        Futbolistas.add(new Arquero("Federico", "Martinez", 32, 10, "Racing ", 2, 7));
-
-        for (Futbolista l : Futbolistas) {
- 
-        }
-        
 	}
 
 }
