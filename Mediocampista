@@ -1,0 +1,41 @@
+package ejercicio11;
+
+public class Mediocampista extends Futbolista{
+
+	int  pasesCompletados;
+	int asistencias ;
+	
+
+	public Mediocampista(String nombre, String apellido, int edad , int dorsal, String club, int pasesCompletados , int asistencias ) {
+
+		super(nombre, apellido, edad, dorsal, club);
+
+		this.pasesCompletados  = pasesCompletados ;
+		this.asistencias  = asistencias ;
+	}
+	
+	@Override
+	public String getPuesto() {
+		return "Mediocampista";
+	}
+
+	@Override
+	public  String jugarLaPelota() {
+        return "El mediocampista juega con pases";
+	}
+
+	
+	@Override
+	public double calcularRendimiento() {
+
+	    double rendimiento = (pasesCompletados * 0.05) + (asistencias * 2);
+
+        if (rendimiento > 10) {
+            rendimiento = 10;
+        }
+
+        return rendimiento;
+    }
+
+	}
+
